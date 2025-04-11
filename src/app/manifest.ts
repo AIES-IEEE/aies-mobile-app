@@ -11,12 +11,12 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#000000",
     icons: [
       {
-        src: "/aies-mobile-app/public/logo-aies.png",
+        src: "/logo-aies.png",
         sizes: "192x192",
         type: "image/png",
       },
       {
-        src: "/aies-mobile-app/public/logo-aies.png",
+        src: "/logo-aies.png",
         sizes: "512x512",
         type: "image/png",
       },
