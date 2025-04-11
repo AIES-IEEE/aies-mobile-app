@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSplash(false);
-    }, 3000);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -24,7 +24,7 @@ export default function Home() {
   if (showSplash) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-aies-secondary">
-        <div className="animate-pulse">
+        <div >
           <div className="flex flex-col items-center justify-center mb-6">
             <Image
               src="/logo-aies.png"
@@ -37,9 +37,6 @@ export default function Home() {
               AIES
             </span>
           </div>
-          <p className="text-xl text-center text-aies-darker">
-            Ambulance Integrated Emergency System
-          </p>
         </div>
       </div>
     );
