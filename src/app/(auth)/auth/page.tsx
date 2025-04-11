@@ -4,6 +4,7 @@ import { useState } from "react";
 import { User, Lock, Mail, AlertCircle, Clipboard } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { signin, signup } from "./auth";
 
 interface FormData {
   fullname: string;
@@ -64,11 +65,13 @@ export default function AuthPage() {
     e.preventDefault();
     if (activeTab === "signin") {
       if (validateSignIn()) {
+        signin(formData);
         console.log("Sign In berhasil:", formData);
         // Redirect atau lakukan proses autentikasi di sini
       }
     } else {
       if (validateSignUp()) {
+        signup(formData);
         console.log("Sign Up berhasil:", formData);
         // Proses pembuatan akun
       }
