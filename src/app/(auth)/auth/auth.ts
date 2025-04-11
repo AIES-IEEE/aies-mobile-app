@@ -26,7 +26,7 @@ export async function signin(formData: FormData) {
 
   // Ganti Redirect kalau udh ada
   if (error) {
-    redirect("/informasi");
+    redirect("/dashboard");
   }
 
   revalidatePath("/", "layout");
