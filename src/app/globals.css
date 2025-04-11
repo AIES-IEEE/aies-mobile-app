@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  /* Warna AIES */
+  --color-aies-primary: #5cbfbf;
+  --color-aies-secondary: #D0ECEC;
+  --color-aies-light: #e8f5f5;
+  --color-aies-dark: #3a9c9c;
+  --color-aies-darker: #2a7575;
+  --color-aies-text: #5a7d7d;
+  
+  /* Shadow */
+  --shadow-aies-button: 0 4px 10px rgba(92, 191, 191, 0.3);
+  --shadow-aies-card: 0 4px 6px rgba(92, 191, 191, 0.25);
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 232, 245, 245;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+@layer base {
+  body {
+    @apply bg-aies-light;
+  }
+}
+
+@layer components {
+  .aies-input {
+    @apply appearance-none border rounded-lg w-full py-3 pl-10 pr-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-aies-primary bg-aies-light;
+  }
+  
+  .aies-button {
+    @apply flex items-center justify-center px-8 py-3 rounded-full text-white font-medium focus:outline-none transition-transform transform hover:scale-105 shadow-aies-button bg-gradient-to-r from-aies-primary to-aies-dark;
+  }
+  
+  .aies-auth-tab {
+    @apply flex-1 py-4 font-medium;
+  }
+  
+  .aies-auth-tab.active {
+    @apply border-b-2 border-aies-primary text-aies-primary font-semibold;
+  }
+  
+  .aies-auth-tab.inactive {
+    @apply text-gray-500;
+  }
+}
+
+/* Animasi untuk splash screen */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
